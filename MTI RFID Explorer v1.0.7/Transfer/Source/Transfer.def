@@ -1,0 +1,18 @@
+; Transfer.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Transfer"
+
+EXPORTS
+    ; Explicit exports can go here
+    API_USB_Open
+    API_Serial_Open
+    API_ClearBuffer
+    API_Write
+    API_Read
+    API_Close
+    API_SetOverlapTime
+    API_AskRevCount  
+    API_AskUsbWtCount
+    API_AskDevType
+    API_AskVersion
+    API_AskDevPath
