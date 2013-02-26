@@ -1,0 +1,42 @@
+Edited by Clark.
+
+1.	BOOL  API_Open(UINT uiPID, UINT uiVID);
+2.	BOOL API_Serial_Open(TCHAR *tcComPort, DCB &r_Dcb);
+	=>Choice one device to open
+
+2.	void   API_Close();
+
+3.	UINT  API_Read(UCHAR *cData, UINT iLength = USB_LENGTH);
+	=>If returned 0, it means doesn't receive any data.
+
+4.	BOOL API_Write(UCHAR *cData, UINT iLength = USB_LENGTH);
+
+5.	UINT  API_AskRevCount();
+	=>Use this function to detect what number data is input. 
+	  If the device is USB, only returned max report count.
+	  If it is the serial, returned input data count.
+
+6.	char* API_AskDevType();
+	=>Ask device that is USB or RS232.
+
+7.	BOOL API_ClearBuffer();
+        =>Clear RS232 input/output buffer and clear error state.
+
+
+
+============================================================
+
+please follow these steps:
+
+1. open device
+     API_USB_Open()
+
+2.  Write data to device
+     API_Write()   //Write Data
+
+3. Read data from device
+   if(   0 != API_AskRevCount()  )
+          API_Read();
+
+4. close device
+     API_Close()
