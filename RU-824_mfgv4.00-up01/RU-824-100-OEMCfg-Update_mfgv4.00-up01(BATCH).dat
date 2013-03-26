@@ -1,0 +1,20 @@
+# *****************************************************************************
+#
+# MTI RFID Product Model Name (Group) : RU-824 (gA)
+# OEMCfg Manufacture Version Number   : 4.00
+# OEMCfg Update Pack Information Code : 01
+# Supported Firmware Version Number   : 3.0.0 or higher
+# Release Date                        : March 26, 2013
+# Revision History:
+#   [Information Code 00]
+#     - Add OEMCfg update version number.
+#   [Information Code 01]
+#     - Modify RF reverse power threshold value.
+#
+# Copyright (C) 2011 Microelectronics Technology Inc.
+#
+# *****************************************************************************
+
+oem,write,0x00001B02,0x41343030
+oem,write,0x00001B03,0x00003031
+oem,write,0x00001B20,0xFFFFFFE1
