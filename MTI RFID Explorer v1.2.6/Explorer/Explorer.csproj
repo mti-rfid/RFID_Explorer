@@ -1,0 +1,558 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{927C3349-5AC1-46AA-982A-B54BA542A196}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RFID_Explorer</RootNamespace>
+    <AssemblyName>Explorer</AssemblyName>
+    <ApplicationIcon>MTI.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>37ED15F1F9130943FE7515B6D5D68BCBAFF6AE88</ManifestCertificateThumbprint>
+    <ManifestKeyFile>RFID Tracer_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <StartupObject>RFID_Explorer.Program</StartupObject>
+    <TargetZone>LocalIntranet</TargetZone>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>C:\Program Files\MTI\Tracer\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>MTI RFID Tracer</ProductName>
+    <PublisherName>MTI, Inc.</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>414</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>414</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Add by FJ for fix the USB reconnection failuer issue in Windows 10, 2016-08-22 -->
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <!-- End by FJ for fix the USB reconnection failuer issue in Windows 10, 2016-08-22 -->
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\DataGridViewButtonColumn\DataGridViewButtonColumn.cs" />
+    <Compile Include="Source\Dialog\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\AntennaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\AntennaEdit.designer.cs">
+      <DependentUpon>AntennaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\AntennaSenseThresholdEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\AntennaSenseThresholdEdit.designer.cs">
+      <DependentUpon>AntennaSenseThresholdEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithmParms_0_Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithmParms_0_Display.designer.cs">
+      <DependentUpon>ConfigureAlgorithmParms_0_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithmParms_1_Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithmParms_1_Display.designer.cs">
+      <DependentUpon>ConfigureAlgorithmParms_1_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithm_Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithm_Display.designer.cs">
+      <DependentUpon>ConfigureAlgorithm_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithm_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAlgorithm_Edit.designer.cs">
+      <DependentUpon>ConfigureAlgorithm_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAntenna.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureAntenna.designer.cs">
+      <DependentUpon>ConfigureAntenna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureForm.Designer.cs">
+      <DependentUpon>ConfigureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureGPIO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureGPIO.designer.cs">
+      <DependentUpon>ConfigureGPIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigurePostSingulation_Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigurePostSingulation_Display.designer.cs">
+      <DependentUpon>ConfigurePostSingulation_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigurePostSingulation_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigurePostSingulation_Edit.designer.cs">
+      <DependentUpon>ConfigurePostSingulation_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureRFBand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureRFBand.designer.cs">
+      <DependentUpon>ConfigureRFBand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSelect_Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSelect_Display.designer.cs">
+      <DependentUpon>ConfigureSelect_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSelect_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSelect_Edit.designer.cs">
+      <DependentUpon>ConfigureSelect_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureSettings.Designer.cs">
+      <DependentUpon>ConfigureSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureTrouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureTrouble.designer.cs">
+      <DependentUpon>ConfigureTrouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\ConfigureVersion.Designer.cs">
+      <DependentUpon>ConfigureVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\ControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\ControlPanel.designer.cs">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\CustomDialogClose.cs" />
+    <Compile Include="Source\DataExport.cs" />
+    <Compile Include="Source\Dialog\Tool\CommandTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\CommandTest.Designer.cs">
+      <DependentUpon>CommandTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\ReturnLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\ReturnLoss.Designer.cs">
+      <DependentUpon>ReturnLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\RFTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\RFTest.Designer.cs">
+      <DependentUpon>RFTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\EnumDataSource.cs" />
+    <Compile Include="Source\EnumDataSourceImpls.cs" />
+    <Compile Include="Source\Dialog\ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\ExportForm.designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\GridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\GridControl.designer.cs">
+      <DependentUpon>GridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HexNumberTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\MacError.cs" />
+    <Compile Include="Source\NumericStringConverter.cs" />
+    <Compile Include="Source\Dialog\Tool\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\Options.designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\OptionsGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\OptionsGeneral.designer.cs">
+      <DependentUpon>OptionsGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\OptionsLogging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\OptionsLogging.designer.cs">
+      <DependentUpon>OptionsLogging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Source\Dialog\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\AntennaEdit.resx">
+      <DependentUpon>AntennaEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\AntennaSenseThresholdEdit.resx">
+      <DependentUpon>AntennaSenseThresholdEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureAlgorithmParms_0_Display.resx">
+      <DependentUpon>ConfigureAlgorithmParms_0_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureAlgorithmParms_1_Display.resx">
+      <DependentUpon>ConfigureAlgorithmParms_1_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureAlgorithm_Display.resx">
+      <DependentUpon>ConfigureAlgorithm_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureAlgorithm_Edit.resx">
+      <DependentUpon>ConfigureAlgorithm_Edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureAntenna.resx">
+      <DependentUpon>ConfigureAntenna.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureForm.resx">
+      <DependentUpon>ConfigureForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureGPIO.resx">
+      <DependentUpon>ConfigureGPIO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigurePostSingulation_Display.resx">
+      <DependentUpon>ConfigurePostSingulation_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigurePostSingulation_Edit.resx">
+      <DependentUpon>ConfigurePostSingulation_Edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureRFBand.resx">
+      <DependentUpon>ConfigureRFBand.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureSelect_Display.resx">
+      <DependentUpon>ConfigureSelect_Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureSelect_Edit.resx">
+      <DependentUpon>ConfigureSelect_Edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureSettings.resx">
+      <DependentUpon>ConfigureSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureTrouble.resx">
+      <DependentUpon>ConfigureTrouble.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\ConfigureVersion.resx">
+      <DependentUpon>ConfigureVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\ControlPanel.resx">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\ExportForm.resx">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Main\GridControl.resx">
+      <DependentUpon>GridControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\CommandTest.resx">
+      <DependentUpon>CommandTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\OptionsGeneral.resx">
+      <DependentUpon>OptionsGeneral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\OptionsLogging.resx">
+      <DependentUpon>OptionsLogging.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Main\ProtocolControl.resx">
+      <DependentUpon>ProtocolControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\AccessData\RegisterAccess.resx">
+      <DependentUpon>RegisterAccess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Configure\RFChannelEdit.resx">
+      <DependentUpon>RFChannelEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Main\RFIDExplorer.resx">
+      <DependentUpon>RFIDExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Main\SummaryControl.resx">
+      <DependentUpon>SummaryControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\AccessData\TagAccess.resx">
+      <DependentUpon>TagAccess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\ReturnLoss.resx">
+      <DependentUpon>ReturnLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\RFTest.resx">
+      <DependentUpon>RFTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Dialog\Tool\SetComport.resx">
+      <DependentUpon>SetComport.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+      <!-- Add by FJ for fix the USB reconnection failuer issue in Windows 10, 2016-08-22 -->
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+      <!-- End by FJ for fix the USB reconnection failuer issue in Windows 10, 2016-08-22 -->
+    <None Include="Config\app.config" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Config\LinkProfile.ini" />
+    <None Include="Config\macErrors.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\ProtocolControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\ProtocolControl.designer.cs">
+      <DependentUpon>ProtocolControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\AccessData\RegisterAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\AccessData\RegisterAccess.designer.cs">
+      <DependentUpon>RegisterAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\AccessData\RegisterAccessManaged.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\RFChannelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Configure\RFChannelEdit.designer.cs">
+      <DependentUpon>RFChannelEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\RFIDExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\RFIDExplorer.designer.cs">
+      <DependentUpon>RFIDExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\SetComport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Tool\SetComport.Designer.cs">
+      <DependentUpon>SetComport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Settings.cs" />
+    <Compile Include="Source\Singleton.cs" />
+    <Compile Include="Source\Dialog\Main\SummaryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\SummaryControl.designer.cs">
+      <DependentUpon>SummaryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\AccessData\TagAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\AccessData\TagAccess.Designer.cs">
+      <DependentUpon>TagAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\TracerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Dialog\Main\TracerControl.designer.cs">
+      <DependentUpon>TracerControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\abort.gif" />
+    <Content Include="Image\clear.gif" />
+    <Content Include="Image\kill.gif" />
+    <Content Include="Image\loading.gif" />
+    <Content Include="Image\lock.gif" />
+    <Content Include="Image\MTI Logo.jpg" />
+    <Content Include="Image\MTI.ico" />
+    <Content Include="Image\pause.gif" />
+    <Content Include="Image\read.gif" />
+    <Content Include="Image\readonce.gif" />
+    <Content Include="Image\stop.gif" />
+    <Content Include="Image\tracer.ico" />
+    <Content Include="Image\write.gif" />
+    <Content Include="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MTI.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Visual.C++.8.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Visual C++ Runtime Libraries %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{0365F35C-1292-4964-A58A-7B626F579C86}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFIDInterface\RFIDInterface.csproj">
+      <Project>{780E42D9-FE9C-4209-A0B4-7938999AD6EA}</Project>
+      <Name>RFIDInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
