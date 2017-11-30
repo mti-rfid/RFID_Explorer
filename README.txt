@@ -10,13 +10,13 @@ Here includes the document as below.
 	- MTI RU-824 RFID Module Command Reference Manual v3.3.pdf
 
 2. The user manual of RFID Explorer
-	- MTI RFID Explorer User Manual v1.0.2.pdf
+	- MTI RFID Explorer User Manual v1.1.2.pdf
 
 3. The installation file of MTI RFID ME Explorer
-	- MTI RFID Explorer v1.1.7.msi
+	- MTI RFID Explorer v1.2.6.msi
 
 4. The source code of MTI RFID Explorer (in C#)
-	- under folder \MTI RFID Explorer v1.1.7
+	- under folder \MTI RFID Explorer v1.2.6
 
 5. The OEM Update Guide and data file for OEMCfg Update v4.00-up01 to fix the 0x309 larm issue
 	- under folder \RU-824_mfgv4.00-up01
