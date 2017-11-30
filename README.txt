@@ -1,4 +1,4 @@
-MTI RFID Explorer -- Dec 14, 2015
+MTI RFID Explorer -- Nov 30, 2017
 Copyright (C) 2012 Microelectronics Technology Inc.
 
 MTI RFID Explorer is a software to help people to evaluate MTI UHF RFID modules and reader, including RU-861-XXX, RU-824-000 modules and READ ME (RU-824) reader.
@@ -23,5 +23,10 @@ Here includes the document as below.
 
 6. RFID ME License and Warranty Agreement to use the provided document.
 	- RFID ME License and Warranty Agreement Rev B 120629.pdf
+
+7. The Reference Manual of MTI RFID Module Command and detail information to control MTI RFID HP-SiP module.
+	- MTI RU00-M03-X RFID Module Command Reference Manual v1.1.pdf
+	- MTI RU00-M03-X RFID Module OEM Configuration Guide v1.0.pdf
+	- MTI RU00-M06-X RFID Module Command Reference Manual v1.0.pdf
 
 Upon the acceptance on the RFID ME License and Warranty Agreement, it is welcome to build your own application by using the information we provided to work on the MTI UHF RFID module and reader.
