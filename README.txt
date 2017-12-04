@@ -1,7 +1,7 @@
 MTI RFID Explorer -- Nov 30, 2017
 Copyright (C) 2012 Microelectronics Technology Inc.
 
-MTI RFID Explorer is a software to help people to evaluate MTI UHF RFID modules and reader, including RU-861-XXX, RU-824-000 modules and READ ME (RU-824) reader.
+MTI RFID Explorer is a software to help people to evaluate MTI UHF RFID modules and reader, including RU-861-XXX, RU00-M03-X, RU00-M06-X modules and READ ME (RU-824) reader.
 
 Here includes the document as below.
 
