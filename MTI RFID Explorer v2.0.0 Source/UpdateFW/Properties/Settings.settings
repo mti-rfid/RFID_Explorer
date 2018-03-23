@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UpdateFWTool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="fileNameLinkdage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Linkage.dll</Value>
+    </Setting>
+    <Setting Name="fileNameTransfer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Transfer.dll</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
