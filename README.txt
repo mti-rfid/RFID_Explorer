@@ -1,4 +1,4 @@
-MTI RFID Explorer -- Mar 23, 2018
+MTI RFID Explorer -- April 20, 2018
 Copyright (C) 2012 Microelectronics Technology Inc.
 
 MTI RFID Explorer is a software to help people to evaluate MTI UHF RFID modules and reader, including RU-861-XXX, RU00-M03-X, RU00-M06-X modules and READ ME (RU-824) reader.
@@ -10,13 +10,13 @@ Here includes the document as below.
 	- MTI RU-824 RFID Module Command Reference Manual v3.3.pdf
 
 2. The user manual of RFID Explorer
-	- MTI RFID Explorer User Manual v2.0.0.pdf
+	- MTI RFID Explorer User Manual v2.0.1.pdf
 
 3. The installation file of MTI RFID ME Explorer
-	- MTI RFID Explorer v2.0.0.msi
+	- MTI RFID Explorer v2.0.1.msi
 
 4. The source code of MTI RFID Explorer (in C#)
-	- under folder \MTI RFID Explorer v2.0.0
+	- under folder \MTI RFID Explorer v2.0.1
 
 5. The OEM Update Guide and data file for OEMCfg Update v4.00-up01 to fix the 0x309 larm issue
 	- under folder \RU-824_mfgv4.00-up01
