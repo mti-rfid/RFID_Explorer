@@ -25,8 +25,8 @@ Here includes the document as below.
 	- RFID ME License and Warranty Agreement Rev B 120629.pdf
 
 7. The Reference Manual of MTI RFID Module Command and detail information to control MTI RFID HP-SiP module.
-	- MTI RU00-M03-X RFID Module Command Reference Manual v1.1.pdf
+	- MTI RU00-M03-X RFID Module Command Reference Manual v2.1.pdf
 	- MTI RU00-M03-X RFID Module OEM Configuration Guide v1.0.pdf
-	- MTI RU00-M06-X RFID Module Command Reference Manual v1.0.pdf
+	- MTI RU00-M06-X RFID Module Command Reference Manual v3.1.pdf
 
 Upon the acceptance on the RFID ME License and Warranty Agreement, it is welcome to build your own application by using the information we provided to work on the MTI UHF RFID module and reader.
